@@ -15,4 +15,4 @@ git clone https://github.com/iglobal-developer/luci-theme-argon.git package/lean
 rm -rf package/luci
 git clone https://github.com/iglobal-developer/luci.git package/luci
 git clone https://github.com/iglobal-developer/openwrt-v2ray.git package/v2ray-core
-git clone "https://"$GITHUB_TOKEN"@github.com/iglobal-developer/vsocks.git" package/vsocks-app-vproxy
+git clone "https://iglobal-developer:"$GITHUB_TOKEN"@github.com/iglobal-developer/vsocks.git" package/vsocks-app-vproxy
