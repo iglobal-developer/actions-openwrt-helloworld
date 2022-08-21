@@ -40,7 +40,7 @@ env:
   UPLOAD_COWTRANSFER: false
   UPLOAD_WETRANSFER: false
   UPLOAD_RELEASE: true
-  TZ: Asia/ho_chi_minh
+  TZ: America/New_York
 
 jobs:
   build:
