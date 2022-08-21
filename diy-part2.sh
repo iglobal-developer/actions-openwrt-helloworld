@@ -11,5 +11,8 @@
 # Modify default IP
 sed -i 's/192.168.1.1/192.168.1.11/g' package/base-files/files/bin/config_generate
 rm -rf package/lean/luci-theme-argon
-git clone https://github.com/jerrykuku/luci-theme-argon.git package/lean/luci-theme-argon
-git clone https://github.com/kuoruan/openwrt-v2ray.git package/v2ray-core
+git clone https://github.com/iglobal-developer/luci-theme-argon.git package/lean/luci-theme-argon
+rm -rf package/lean/luci
+git clone https://github.com/iglobal-developer/luci.git package/luci
+git clone https://github.com/iglobal-developer/openwrt-v2ray.git package/v2ray-core
+git clone https://iglobal-developer:$GITHUB_TOKEN@github.com/iglobal-developer/vsocks.git package/vsocks-app-vproxy
