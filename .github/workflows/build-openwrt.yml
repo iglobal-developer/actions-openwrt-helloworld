@@ -82,7 +82,7 @@ jobs:
 
     - name: Load custom configuration
       env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        GITHUB_CHECKOUT: ${{ secrets.CHECKOUT }}
       run: |
         [ -e files ] && mv files openwrt/files
         [ -e $CONFIG_FILE ] && mv $CONFIG_FILE openwrt/.config
