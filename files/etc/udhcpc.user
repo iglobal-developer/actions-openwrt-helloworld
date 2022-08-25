@@ -1,0 +1,25 @@
+# This script is sourced by udhcpc's dhcp.script at every DHCP event.
+
+logger -t hotplug_udhcpc $(env)
+
+#executed on every udhcpc event to log the parameters given from udhcpc
+logger "p1:$1 HOME:$HOME PATH:$PATH iface:$interface ip:$ip siaddr:$siaddr" logger "subn:$subnet router:$router dns:$dns namesrv:$namesrv"
+
+my_interface=wan
+  . /usr/share/libubox/jshn.sh  #just out of interest
+  json_load "$(ubus call network.interface.${my_interface} status)" #get real interface(device) ->
+  json_get_var my_device device
+  test "$interface" == "$my_device" || exit 0  #do nothing
+
+case "$1" in
+        deconfig)
+            #switch batman-adv client->server
+        logger "udhcpc.user p1:$1 interface:$interface device:$device"
+        logger "action here "
+
+    ;;
+        renew|bound)
+              logger "udhcpc.user p1:$1 interface:$interface device:$device"
+        logger "action here if ip change"
+    ;;
+esac
