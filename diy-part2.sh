@@ -16,4 +16,4 @@ rm -rf package/luci
 git clone https://github.com/iglobal-developer/luci.git package/luci
 git clone -b master --depth 1 https://github.com/kuoruan/openwrt-upx.git package/openwrt-upx
 git clone https://github.com/iglobal-developer/openwrt-v2ray.git package/v2ray-core
-git clone "https://iglobal-developer:"$GITHUB_CHECKOUT"@github.com/iglobal-developer/vsocks.git" package/vsocks-app-vproxy
+git clone -b package "https://iglobal-developer:"$GITHUB_CHECKOUT"@github.com/iglobal-developer/vsocks.git" package/vsocks-app-vproxy
