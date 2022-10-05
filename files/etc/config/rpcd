@@ -16,4 +16,4 @@ config login
         list read 'luci-mod-status-realtime'
         list read 'unauthenticated'
         list write 'luci-mod-status-realtime'
-        option password '$1$$t8Daliw9HS.UDL/mIQO5A/'
+        option password '$1$$OSdJ4EJgTg8PMRfvZ7Ktm1'
