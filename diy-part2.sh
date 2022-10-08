@@ -19,17 +19,17 @@ echo "DISTRIB_DESCRIPTION='VSocks V1.0'" >>package/base-files/files/etc/openwrt_
 sed -i 's/192.168.1.1/192.168.1.11/g' package/base-files/files/bin/config_generate
 rm -rf package/lean/luci-theme-argon
 git clone https://github.com/iglobal-developer/luci-theme-argon.git package/lean/luci-theme-argon
-rm -rf package/luci
-git clone https://github.com/iglobal-developer/luci.git package/luci
+rm -rf luci
+git clone https://github.com/iglobal-developer/luci.git luci
 
-grep -v "luciname    = " package/luci/modules/luci-base/luasrc/version.lua  > tmpFile  && mv tmpFile package/luci/modules/luci-base/luasrc/version.lua
-echo "luciname    = VPROXY" >> package/luci/modules/luci-base/luasrc/version.lua
-grep -v "luciversion = " package/luci/modules/luci-base/luasrc/version.lua  > tmpFile  && mv tmpFile package/luci/modules/luci-base/luasrc/version.lua
-echo "luciversion = V1.0" >> package/luci/modules/luci-base/luasrc/version.lua
+grep -v "luciname    = " luci/modules/luci-base/luasrc/version.lua  > tmpFile  && mv tmpFile luci/modules/luci-base/luasrc/version.lua
+echo "luciname    = VPROXY" >> luci/modules/luci-base/luasrc/version.lua
+grep -v "luciversion = " luci/modules/luci-base/luasrc/version.lua  > tmpFile  && mv tmpFile luci/modules/luci-base/luasrc/version.lua
+echo "luciversion = V1.0" >> luci/modules/luci-base/luasrc/version.lua
 
-sed -i 's/luci/vsocks/g' package/luci/modules/luci-base/root/www/index.html
-sed -i 's/LuCI - Lua/VSocks/g' package/luci/modules/luci-base/root/www/index.html
-mv package/luci/modules/luci-base/htdocs/cgi-bin/luci package/luci/modules/luci-base/htdocs/cgi-bin/vsocks
+sed -i 's/luci/vsocks/g' luci/modules/luci-base/root/www/index.html
+sed -i 's/LuCI - Lua/VSocks/g' luci/modules/luci-base/root/www/index.html
+mv luci/modules/luci-base/htdocs/cgi-bin/luci luci/modules/luci-base/htdocs/cgi-bin/vsocks
 
 git clone -b master --depth 1 https://github.com/kuoruan/openwrt-upx.git package/openwrt-upx
 git clone https://github.com/iglobal-developer/openwrt-v2ray.git package/v2ray-core
