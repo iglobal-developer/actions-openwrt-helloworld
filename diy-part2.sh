@@ -22,14 +22,14 @@ git clone https://github.com/iglobal-developer/luci-theme-argon.git package/lean
 rm -rf luci
 git clone https://github.com/iglobal-developer/luci.git luci
 
-grep -v "luciname    = " luci/modules/luci-base/luasrc/version.lua  > tmpFile  && mv tmpFile luci/modules/luci-base/luasrc/version.lua
-echo "luciname    = VPROXY" >> luci/modules/luci-base/luasrc/version.lua
-grep -v "luciversion = " luci/modules/luci-base/luasrc/version.lua  > tmpFile  && mv tmpFile luci/modules/luci-base/luasrc/version.lua
-echo "luciversion = V1.0" >> luci/modules/luci-base/luasrc/version.lua
+grep -v "luciname    = " feeds/luci/modules/luci-base/luasrc/version.lua  > tmpFile  && mv tmpFile feeds/luci/modules/luci-base/luasrc/version.lua
+echo "luciname    = VPROXY" >> feeds/luci/modules/luci-base/luasrc/version.lua
+grep -v "luciversion = " feeds/luci/modules/luci-base/luasrc/version.lua  > tmpFile  && mv tmpFile feeds/luci/modules/luci-base/luasrc/version.lua
+echo "luciversion = V1.0" >> feeds/luci/modules/luci-base/luasrc/version.lua
 
-sed -i 's/luci/vsocks/g' luci/modules/luci-base/root/www/index.html
-sed -i 's/LuCI - Lua/VSocks/g' luci/modules/luci-base/root/www/index.html
-mv luci/modules/luci-base/htdocs/cgi-bin/luci luci/modules/luci-base/htdocs/cgi-bin/vsocks
+sed -i 's/luci/vsocks/g' feeds/luci/modules/luci-base/root/www/index.html
+sed -i 's/LuCI - Lua/VSocks/g' feeds/luci/modules/luci-base/root/www/index.html
+mv feeds/luci/modules/luci-base/htdocs/cgi-bin/luci feeds/luci/modules/luci-base/htdocs/cgi-bin/vsocks
 
 git clone -b master --depth 1 https://github.com/kuoruan/openwrt-upx.git package/openwrt-upx
 git clone https://github.com/iglobal-developer/openwrt-v2ray.git package/v2ray-core
