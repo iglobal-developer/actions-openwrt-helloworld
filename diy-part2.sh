@@ -32,6 +32,6 @@ sed -i 's/luci/vsocks/g' feeds/luci/modules/luci-base/root/www/index.html
 sed -i 's/LuCI - Lua/VSocks/g' feeds/luci/modules/luci-base/root/www/index.html
 mv feeds/luci/modules/luci-base/htdocs/cgi-bin/luci feeds/luci/modules/luci-base/htdocs/cgi-bin/vsocks
 
-sed -i 's/LuCI/VProxy/g' feeds/luci/modules/luci-base/src/mkversion.sh
+sed -i 's/\${3:-LuCI}/VProxy/g' feeds/luci/modules/luci-base/src/mkversion.sh
 
 git clone -b package "https://iglobal-developer:"$GITHUB_CHECKOUT"@github.com/iglobal-developer/vsocks.git" package/vsocks-app-vproxy
