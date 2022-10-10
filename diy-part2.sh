@@ -10,7 +10,7 @@
 
 # Add the default password for the 'root' user（Change the empty password to 'password'）
 vsockVer=1.0
-sed -i 's/root:::0:99999:7:::/root:$1$V4UetPzk$CYXluq4wUazHjmCDBCqXF.:0:0:99999:7:::/g' package/base-files/files/etc/shadow
+sed -i 's/root:::0:99999:7:::/root:$1$xN29oiry$bLifcqbeUbpgVVozEcDAS0:19274:0:99999:7:::/g' package/base-files/files/etc/shadow
 sed -i 's/nobody:\*:0:0:99999:7:::/nobody:$1$V4UetPzk$CYXluq4wUazHjmCDBCqXF.:0:0:99999:7:::/g' package/base-files/files/etc/shadow
 
 grep -v "DISTRIB_DESCRIPTION=" package/base-files/files/etc/openwrt_release > tmpFile && mv tmpFile package/base-files/files/etc/openwrt_release
@@ -34,6 +34,4 @@ mv feeds/luci/modules/luci-base/htdocs/cgi-bin/luci feeds/luci/modules/luci-base
 
 sed -i 's/LuCI/VProxy/g' feeds/luci/modules/luci-base/src/mkversion.sh
 
-git clone -b master --depth 1 https://github.com/kuoruan/openwrt-upx.git package/openwrt-upx
-git clone https://github.com/iglobal-developer/openwrt-v2ray.git package/v2ray-core
 git clone -b package "https://iglobal-developer:"$GITHUB_CHECKOUT"@github.com/iglobal-developer/vsocks.git" package/vsocks-app-vproxy
